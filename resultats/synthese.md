@@ -686,7 +686,7 @@ Professionnel de l'immobilier (agence, syndic)        26      117.0     93      
 ```
 
 ## P6 - Communes les plus actives (code INSEE)
-*Interet pour le medico-social : cible geographique pour une demarche de prospection (codes a convertir en noms de communes)*
+*Interet pour le medico-social : cible geographique pour une demarche de prospection*
 
 ```
  COMM  permis  logements  sociaux
