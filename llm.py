@@ -23,7 +23,7 @@ PAUSE_S = 0.5                                         # cadence raisonnable
 
 FAMILLES = [
     "Collectivite / public", "Bailleur social", "Medico-social / sante",
-    "Association / fondation (secteur a preciser)", "Promoteur / constructeur",
+    "Association / fondation", "Promoteur / constructeur",
     "SCI / fonciere / investisseur", "Holding / siege",
     "Professionnel de l'immobilier (agence, syndic)", "Entreprise (autre secteur)",
     "Non determine",

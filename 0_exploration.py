@@ -4,13 +4,13 @@
     Renseigne les fichiers logements.csv et locaux.csv et un dictionnaire COL avec les vrais nom de colonnes
     des fichihers (mets None si la colonnes n'existe pas)
     
-    Installation : python3 -m pip install pandas
+    Lancer : python 0_exploration.py data/locaux.csv pour le fichier locaux
 """
 import sys
 import pandas as pd
 
-LOGEMENTS = "data/logements.csv"
-LOCAUX = "data/locaux.csv"
+# fichier data/logements.csv lancer par défaut si aucun arg est donner
+FICHIER = sys.argv[1] if len(sys.argv) > 1 else "data/logements.csv"  
 
 COL = {
     "id": "NUM_DAU",     # identifiant du permis
@@ -28,13 +28,12 @@ COL = {
     "date_daact":"DATE_REELLE_DAACT",   # date réelle d'achèvement des travaux
 }
 
-df = pd.read_csv(LOGEMENTS, sep=None, engine="python", dtype=str, encoding="utf-8", header=1)
-print(f"Fichier brut -> logements.csv: {len(df)} lignes, {df.shape[1]} colonnes")
-#print("Colonnes reelles :", list(df1.columns))
+# Le fichier a plusieurs lignes d'en-tete : on cherche celle qui contient les noms courts
+with open(FICHIER, encoding="utf-8", errors="replace") as f:
+    ligne_entete = next((i for i, l in enumerate(f) if "NUM_DAU" in l), 0)
+print(f"Noms courts trouves a la ligne {ligne_entete + 1} du fichier")
 
-df2 = pd.read_csv(LOCAUX, sep=None, engine="python", dtype=str, encoding="utf-8")
-print(f"Fichier brut -> locaux.csv: {len(df2)} lignes, {df2.shape[1]} colonnes")
-#print("Colonnes reelles :", list(df2.columns))
+df = pd.read_csv(FICHIER, sep=None, engine="python", dtype=str, header=ligne_entete)
 
 # Arret clair si une colonne est introuvable (plus de section sautee en silence)
 manquantes = [v for v in COL.values() if v not in df.columns]
@@ -42,6 +41,8 @@ if manquantes:
     print("Colonnes introuvables :", manquantes)
     print("Colonnes reelles :", list(df.columns))
     sys.exit(1)
+
+print(f"{len(df)} lignes, {df.shape[1]} colonnes")
 
 # --- Controle de ce que contient le fichier (verifie tes filtres) ---
 for cle in ("type", "dep"):

@@ -3,12 +3,12 @@
 Chaque ligne de sortie garde la regle qui a decide et un niveau de confiance.
 Ce qui n'est pas couvert reste "Non determine" (exigence du brief).
 
-Lanceer avec : python3 classification.py
+Lanceer avec : python 1_regles_classification.py
 """
-import re
-import pandas as pd
 
-FICHIER = "data/logements.csv"
+import re
+from common import charger
+
 SORTIE = "data/permis_classes.csv"
 
 # --- Signaux utilises par les regles ---
@@ -26,10 +26,7 @@ RE_PROMOTEUR = re.compile(r"PROGRAMMES?\b|PROMOTION|NEXITY|BOUYGUES IMMO|KAUFMAN
 
 def classer(cj, ape, den):
     """Renvoie (famille, regle, confiance). Ordre = priorite des regles."""
-    cj = str(cj).strip() if pd.notna(cj) else ""
-    ape = str(ape).strip() if pd.notna(ape) else ""
-    den = str(den).strip().upper() if pd.notna(den) else ""
-    
+    cj, ape, den = (cj or "").strip(), (ape or "").strip(), (den or "").upper()
     if cj.startswith("7"):
         return "Collectivite / public", "CJ 7xxx", "haute"
     if cj in CJ_BAILLEUR:
@@ -39,7 +36,7 @@ def classer(cj, ape, den):
     if ape[:2] in ("86", "87", "88"):
         return "Medico-social / sante", "APE 86/87/88", "haute"
     if cj.startswith(("92", "93")):
-        return "Association / fondation (secteur a preciser)", "CJ 92xx/93xx", "moyenne"
+        return "Association / fondation", "CJ 92xx/93xx", "moyenne"
     if ape in APE_PROMOTEUR:
         return "Promoteur / constructeur", "APE promotion/construction", "haute"
     if cj in CJ_PROMOTION:
@@ -55,9 +52,7 @@ def classer(cj, ape, den):
     return "Non determine", "aucune regle", "-"
 
 
-with open(FICHIER, encoding="utf-8", errors="replace") as f:
-    entete = next((i for i, l in enumerate(f) if "NUM_DAU" in l), 0)
-df = pd.read_csv(FICHIER, sep=None, engine="python", dtype=str, header=entete)
+df = charger(avec_familles=False)   # logements + locaux, un permis par ligne
 
 # --- Partie 1 : verifier le sens des codes (denominations d'exemple par code) ---
 print("=== Verification : 4 denominations d'exemple pour les 12 CJ les plus frequents ===")
@@ -66,12 +61,7 @@ for cj in df["CJ_DEM"].value_counts().head(12).index:
     print(f"CJ {cj} : {ex}")
 
 # --- Partie 2 : classification ---
-res = df.apply(
-    lambda r: classer(r["CJ_DEM"], r["APE_DEM"], r["DENOM_DEM"]),
-    axis=1,
-    result_type="expand"
-)
-
+res = df.apply(lambda r: classer(r["CJ_DEM"], r["APE_DEM"], r["DENOM_DEM"]), axis=1, result_type="expand")
 df[["famille", "regle", "confiance"]] = res
 
 print("\n=== Permis par famille ===")
@@ -87,6 +77,6 @@ print("Top 20 non determines (pour affiner les regles ou passer au LLM) :")
 print(nd.groupby(["SIREN_DEM", "DENOM_DEM", "CJ_DEM", "APE_DEM"]).size()
         .sort_values(ascending=False).head(20).to_string())
 
-cols = ["NUM_DAU", "SIREN_DEM", "DENOM_DEM", "CJ_DEM", "APE_DEM", "famille", "regle", "confiance"]
+cols = ["NUM_DAU", "source", "SIREN_DEM", "DENOM_DEM", "CJ_DEM", "APE_DEM", "famille", "regle", "confiance"]
 df[cols].to_csv(SORTIE, index=False)
 print(f"\nResultat ecrit dans {SORTIE}")

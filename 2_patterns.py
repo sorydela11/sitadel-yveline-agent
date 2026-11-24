@@ -1,15 +1,16 @@
-"""Etape 5 : patterns a exploiter pour un acteur de l'immobilier medico-social.
+""" Patterns a exploiter pour un acteur de l'immobilier medico-social.
 
-Entrees : data/logements.csv (brut filtre) + data/permis_classes_final.csv (familles).
+Entrees : data/logements.csv et data/locaux.csv + data/permis_classes_final.csv (familles).
 Sorties : resultats/*.csv et resultats/synthese.md (chaque resultat renvoie a sa source).
 
-Lance : python 05_patterns.py
+Lance : python 2_patterns.py
 """
 import os
 
 import pandas as pd
 
-FICHIER = "data/logements.csv"
+from common import charger
+
 CLASSES = "data/permis_classes_final.csv"
 DOSSIER = "resultats"
 SOURCE_URL = "https://www.data.gouv.fr/datasets/689c42fa521ccf80ce954f83/"
@@ -19,54 +20,7 @@ SEUIL_DORMANT_ANS = 3     # autorise depuis plus de N ans sans ouverture de chan
 
 os.makedirs(DOSSIER, exist_ok=True)
 
-# --- Lecture : on retrouve aussi les libelles longs (ligne avant les noms courts) ---
-with open(FICHIER, encoding="utf-8", errors="replace") as f:
-    idx = next((i for i, l in enumerate(f) if "NUM_DAU" in l), 0)
-data = pd.read_csv(FICHIER, sep=None, engine="python", dtype=str, header=idx)
-longs = {}
-if idx > 0:
-    ent = pd.read_csv(FICHIER, sep=None, engine="python", header=None,
-                      skiprows=idx - 1, nrows=2, dtype=str)
-    longs = dict(zip(ent.iloc[1], ent.iloc[0]))
-
-
-def col(motif):
-    """Nom court de la colonne dont le libelle long contient `motif`."""
-    for court, long in longs.items():
-        if motif.lower() in str(long).lower():
-            return court
-    print(f"  ! colonne introuvable pour : {motif}")
-    return None
-
-
-def num(s):
-    return pd.to_numeric(s.str.replace(",", ".", regex=False), errors="coerce")
-
-
-c_lgt = col("Nombre total de logements créés")
-c_soc = col("Nb de logements locatifs sociaux")
-c_pa = col("résidence pour personnes âgées")
-c_ph = col("résidence pour personnes handicapées")
-c_rs = col("Présence d’une résidence sociale")
-for c in (c_pa, c_ph, c_rs):
-    if c:
-        print(f"Valeurs de {c} :", data[c].value_counts(dropna=False).head(5).to_dict())
-
-classes = pd.read_csv(CLASSES, dtype=str)[["NUM_DAU", "famille", "confiance", "methode"]]
-df = data.merge(classes, on="NUM_DAU", how="left")
-
-for k, nom in {"aut": "DATE_REELLE_AUTORISATION", "doc": "DATE_REELLE_DOC", "dac": "DATE_REELLE_DAACT"}.items():
-    df[k] = pd.to_datetime(df[nom], errors="coerce")
-df["annee"] = df["aut"].dt.year
-df["lgt"] = num(df[c_lgt]) if c_lgt else pd.NA
-df["lgt_soc"] = num(df[c_soc]) if c_soc else pd.NA
-
-
-def vrai(c):
-    return df[c].fillna("").str.strip().str.upper().isin({"1", "1.0", "O", "OUI", "TRUE", "T", "X"}) if c else False
-
-
-df["residence_med_soc"] = vrai(c_pa) | vrai(c_ph) | vrai(c_rs)
+df = charger()   # logements + locaux fusionnes
 df["lien_siren"] = ANNUAIRE + df["SIREN_DEM"]
 recent = df[df["annee"] >= ANNEE_MIN]
 
