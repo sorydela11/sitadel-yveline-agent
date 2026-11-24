@@ -8,7 +8,7 @@ import os
 import pandas as pd
 
 FICHIERS = {"logements": "data/logements.csv", "locaux": "data/locaux.csv"}
-SOURCE_URL = "https://www.data.gouv.fr/datasets/689c42fa521ccf80ce954f83/"
+SOURCE_URL = "https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6513f0189d7d312c80ec5b5b"
 ANNUAIRE = "https://annuaire-entreprises.data.gouv.fr/entreprise/"
 SEUIL_DORMANT_ANS = 3
 

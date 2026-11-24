@@ -116,6 +116,6 @@ Pour explorer chaque fichier séparément : `python 0_exploration.py data/locaux
 
 ## Outils et temps
 
-- Python, pandas, Ollama avec le modèle local `qwen2.5:7b` (client `openai` pour dialoguer avec Ollama).
+- Python, pandas, Ollama avec le modèle local `qwen2.5:3b` (client `openai` pour dialoguer avec Ollama).
 - Assistant de code : Claude (aide à l'écriture des scripts).
 - Temps passé : `18 h`.

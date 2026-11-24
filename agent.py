@@ -25,7 +25,7 @@ from common import ANNUAIRE, FAMILLES, SOURCE_URL, charger
 MODEL_CLASSIF = os.environ.get("MODEL_CLASSIF", "qwen2.5:3b")
 MODEL_EXPLORE = os.environ.get("MODEL_EXPLORE", "qwen2.5:3b")
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "http://localhost:11434/v1")
-MAX_DEMANDEURS = int(os.environ.get("MAX_DEMANDEURS", "15"))
+MAX_DEMANDEURS = int(os.environ.get("MAX_DEMANDEURS", "50"))
 DOSSIER = "resultats"
 os.makedirs(DOSSIER, exist_ok=True)
 os.makedirs("data", exist_ok=True)

@@ -528,5 +528,255 @@
   "famille": "SCI / fonciere / investisseur",
   "confiance": "haute",
   "justification": "Le SIREN est associé à une SCI (Société Civile Immobilière) et a un code CJ et APE qui correspondent à un investisseur immobilier."
+ },
+ "499227437": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "moyenne",
+  "justification": "Le SIREN est associé à une entreprise de construction (APE 68.20B) et possède un code CJ 6540 qui est associé à l'immobilier et à la construction."
+ },
+ "335272753": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données supplémentaires fournies pour confirmer la nature du demandeur"
+ },
+ "483919585": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à SCI MAGAMUM, une SCI qui est classée dans la famille SCI / fonciere / investisseur"
+ },
+ "791755085": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "moyenne",
+  "justification": "Le SIREN est associé à une entreprise de construction (APE 01.11Z) et possède un code CJ 6598 qui est associé à l'EARL (Entreprise Agricole et Rurale de Légumes et Lait)"
+ },
+ "897957783": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le demandeur a plusieurs permis de construire liés à une SCI / foncière / investisseur"
+ },
+ "391638202": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le demandeur est associé à une SCI (Société Civile Immobilière) avec des codes CJ et APE liés à l'immobilier."
+ },
+ "821289766": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "La denomination 'DES SABLONS' est associée à la construction et le promoteur immobilier"
+ },
+ "814032215": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données supplémentaires fournies pour confirmer la nature du demandeur"
+ },
+ "402987622": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour confirmer la famille de confiance. Le demandeur a plusieurs permis mais aucune information spécifique ne permet de classer avec certitude."
+ },
+ "322522756": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude."
+ },
+ "502230485": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à la denomination 'SCI SOLER ENTREPRISES' et a un code CJ et APE associés à l'industrie immobilière."
+ },
+ "530097542": {
+  "famille": "Non determine",
+  "confiance": "Non determine",
+  "justification": "Pas assez de données pour classer avec certitude."
+ },
+ "804788313": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas assez d'informations pour classer avec certitude"
+ },
+ "800650467": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à SCI DU VAL GRAPELIN, une SCI qui est classée dans la famille SCI / fonciere / investisseur"
+ },
+ "729804161": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Aucun permis trouvé et pas de données supplémentaires pour confirmer la famille."
+ },
+ "384620829": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas assez d'informations pour confirmer la famille"
+ },
+ "531856276": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas assez d'informations pour classer avec certitude. Seulement le SIREN et des informations de permis de construire."
+ },
+ "347716276": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "moyenne",
+  "justification": "Demandeur est associé à la denomination SOC LUC DESCHAMPS, qui est un promoteur immobilier."
+ },
+ "326399649": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude."
+ },
+ "804150803": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "La CJ 6540 et l'APE 68.20B sont associées à la promotion immobilière."
+ },
+ "897660742": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données supplémentaires fournies pour confirmer la famille du demandeur"
+ },
+ "948276878": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "faible",
+  "justification": "APE code 62.02A related to construction and building activities."
+ },
+ "801832544": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "La denomination RESPELIERS est associée à la profession de promoteur / constructeur."
+ },
+ "453097842": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à la denomination 'SCI DE SAINTE APPOLINE' et à la CJ 6540 et APE 68.20B, ce qui correspond à une SCI"
+ },
+ "325645711": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour confirmer la famille"
+ },
+ "788058030": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude. Seulement un SIREN et une denomination partiellement retrouvée."
+ },
+ "823001615": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude. Seulement un seul permis trouvé et pas de renseignements sur la denomination A.L.F."
+ },
+ "430006387": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude. Seulement un SIREN et des informations de permis de construire."
+ },
+ "884435819": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "moyenne",
+  "justification": "Le SIREN est associé à une SCI (Société Civile Immobilière) et la CJ et APE correspondent à l'industrie immobilière."
+ },
+ "482818887": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "SCI 3 G"
+ },
+ "884778606": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à une SCI (Société Civile Immobilière) et le code CJ (6540) et APE (68.20B) correspondent à l'activité des SCI immobilières."
+ },
+ "510815558": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à SCI CFL PATRIMOINE et le CJ et APE correspondent à l'industrie des SCI"
+ },
+ "885206623": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour classer avec certitude. Le SIREN 885206623 est associé à une entreprise de véhicules automobiles mais il n'y a pas de données supplémentaires pour confirmer sa nature de demandeur."
+ },
+ "888560976": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "moyenne",
+  "justification": "Demandeur avec CJ 5710 et APE 43.99C, ce qui est typique pour un promoteur ou constructeur."
+ },
+ "440117620": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour confirmer la famille. Les permis existants ne fournissent pas de détails suffisants pour établir si c'est un promoteur, bailleur social, etc."
+ },
+ "487650632": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données suffisantes pour confirmer la famille. Les deux demandeurs sont identiques et la famille est indiquée comme 'Non determine' pour l'un."
+ },
+ "450138185": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "La SCI LA FALOURIE est caractérisée par une CJ 6540 et une APE 68.20B, ce qui correspond à une SCI / foncière / investisseur."
+ },
+ "481380723": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le demandeur a une famille de confiance 'SCI / fonciere / investisseur' basée sur son activité et ses précédents permis."
+ },
+ "448414961": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à une SCI BAZTOU, avec CJ 6540 et APE 68.20B, ce qui correspond à une activité de SCI"
+ },
+ "503008989": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "La CJ 6540 et l'APE 68.20B sont associées à la promotion immobilière et à la construction."
+ },
+ "892722075": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à la denomination 'FONCIERE TFC' et a un code CJ et APE liés à la catégorie SCI / fonciere / investisseur."
+ },
+ "910038124": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à une denomination qui correspond à un promoteur immobilier et possède un code CJ et APE associés à l'immobilier."
+ },
+ "818089344": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Pas de données supplémentaires fournies pour confirmer la famille du demandeur"
+ },
+ "341951846": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à SCI FLEXANVILLE et a un code CJ et APE liés à l'immobilier"
+ },
+ "512283508": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "Le CJ 6598 et l'APE 01.11Z sont associés à la promotion immobilière et à la construction"
+ },
+ "444619258": {
+  "famille": "Non determine",
+  "confiance": "faible",
+  "justification": "Aucun autre information disponible pour confirmer la famille du demandeur."
+ },
+ "444410294": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "moyenne",
+  "justification": "Le SIREN est associé à une SCI (SCD) et la CJ et APE correspondent à l'activité des SCI."
+ },
+ "512053216": {
+  "famille": "SCI / fonciere / investisseur",
+  "confiance": "haute",
+  "justification": "Le demandeur possède plusieurs permis de construire pour des logements sociaux et est classé comme SCI / fonciere / investisseur"
+ },
+ "922164066": {
+  "famille": "Promoteur / constructeur",
+  "confiance": "haute",
+  "justification": "Le SIREN est associé à un projet de CJ 6540 et APE 68.20B, ce qui correspond à un promoteur ou constructeur."
+ },
+ "908421621": {
+  "famille": "Non determine",
+  "confiance": "moyenne",
+  "justification": "Pas assez de données pour classer avec certitude"
  }
 }

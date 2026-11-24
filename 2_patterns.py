@@ -13,7 +13,7 @@ from common import charger
 
 CLASSES = "data/permis_classes_final.csv"
 DOSSIER = "resultats"
-SOURCE_URL = "https://www.data.gouv.fr/datasets/689c42fa521ccf80ce954f83/"
+SOURCE_URL = "https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6513f0189d7d312c80ec5b5b"
 ANNUAIRE = "https://annuaire-entreprises.data.gouv.fr/entreprise/"
 ANNEE_MIN = 2021          # fenetre "recente" pour la recurrence
 SEUIL_DORMANT_ANS = 3     # autorise depuis plus de N ans sans ouverture de chantier
@@ -78,11 +78,11 @@ sortie("p5_dormants", f"P5 - Permis dormants (autorises depuis plus de {SEUIL_DO
 p6 = (recent.groupby("COMM").agg(permis=("NUM_DAU", "count"), logements=("lgt", "sum"),
         sociaux=("lgt_soc", "sum")).reset_index().sort_values("permis", ascending=False).head(20))
 sortie("p6_communes", "P6 - Communes les plus actives (code INSEE)",
-       "cible geographique pour une demarche de prospection (codes a convertir en noms de communes)", p6)
+       "cible geographique pour une demarche de prospection", p6)
 
 synthese.append("\n## Limites\n- Une ligne = dernier etat connu du permis ; pas de permis modificatifs.\n"
                 "- ~15 % des ouvertures et achevements ne remontent jamais (note du ministere).\n"
-                "- Familles obtenues par regles puis LLM ; le reste est 'Non determine'.\n")
+                "- Familles obtenues par regles ; le reste est 'Non determine'.\n")
 with open(f"{DOSSIER}/synthese.md", "w", encoding="utf-8") as f:
     f.write("".join(synthese))
 print(f"\nEcrit : {DOSSIER}/synthese.md")
