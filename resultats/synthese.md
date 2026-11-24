@@ -1,6 +1,7 @@
 # Synthese des patterns
 
 Source des permis : https://www.statistiques.developpement-durable.gouv.fr/catalogue?page=dataset&datasetId=6513f0189d7d312c80ec5b5b
+
 Fenetre recente : autorisations depuis 2021. 6730 permis analyses.
 
 ## P1 - Constructeurs reguliers (>=3 permis depuis 2021)
@@ -715,4 +716,4 @@ Professionnel de l'immobilier (agence, syndic)        26      117.0     93      
 ## Limites
 - Une ligne = dernier etat connu du permis ; pas de permis modificatifs.
 - ~15 % des ouvertures et achevements ne remontent jamais (note du ministere).
-- Familles obtenues par regles puis LLM ; le reste est 'Non determine'.
+- Familles obtenues par regles ; le reste est 'Non determine'.
